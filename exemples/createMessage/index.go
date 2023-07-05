@@ -40,7 +40,7 @@ var (
 							commandsHandlers = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){
 								"test": func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 									//autotrole.CreateMessage(s, i, content)
-									autotrole.
+									autotrole.SetRoleOnClick(s, i, "1085295165054402690")
 								},
 								}
 )

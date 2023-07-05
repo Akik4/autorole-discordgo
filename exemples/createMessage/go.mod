@@ -3,7 +3,7 @@ module akika.fr/autorole/exemple1
 go 1.20
 
 require (
-	github.com/akik4/autorole-discordgo v0.0.0-20230705184355-8cf3c1476c94
+	github.com/akik4/autorole-discordgo v0.0.2
 	github.com/bwmarrin/discordgo v0.27.1
 )
 
