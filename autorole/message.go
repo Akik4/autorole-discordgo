@@ -57,6 +57,5 @@ func CreateMessage(s *discordgo.Session,i *discordgo.InteractionCreate ,field []
 			},
 		},
 	})
-	fmt.Println("Passed here #1")
 	if err != nil { return }
 }
