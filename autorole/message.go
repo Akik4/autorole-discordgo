@@ -65,20 +65,21 @@ func ResponseSlashCommand(s *discordgo.Session,i *discordgo.InteractionCreate ,f
 
 func SetRoleOnClick(s *discordgo.Session, i *discordgo.InteractionCreate, roleID string){
 	var (
-		already bool
+		already = false
 		msg string
 	)
 	for _, roles := range i.Member.Roles {
-		if roles == roleID { already = true; return}
-		already = false
+		if roles == roleID { already = true }
 	}
-	s.GuildMemberRoleAdd(i.GuildID, i.Member.User.ID, roleID)
+	err := s.GuildMemberRoleAdd(i.GuildID, i.Member.User.ID, roleID)
+	if err != nil { fmt.Println(err.Error()); return}
 	msg = "You received a new role"
 	if !already {
-		s.GuildMemberRoleRemove(i.GuildID, i.Member.User.ID, roleID)
+		err = s.GuildMemberRoleRemove(i.GuildID, i.Member.User.ID, roleID)
+		if err != nil { fmt.Println(err.Error()); return}
 		msg = "You lost a role"
 	}
-	err := s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+	err = s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
 		Data: &discordgo.InteractionResponseData{
 			Content: msg,
