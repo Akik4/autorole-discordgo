@@ -94,7 +94,7 @@ func SetRoleOnClick(s *discordgo.Session, i *discordgo.InteractionCreate, roleID
 	if err != nil { fmt.Println(err.Error()); return}
 }
 
-func CreateCommand(s *discordgo.Session, command string, content []MessageFormat){
+func CreateCommand(s *discordgo.Session, command string, description string,content []MessageFormat, appID string, guildID string){
 	CommandHandlers[command] = func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		ResponseSlashCommand(s, i, content)
 	}
@@ -103,5 +103,10 @@ func CreateCommand(s *discordgo.Session, command string, content []MessageFormat
 		if h, ok := CommandHandlers[i.ApplicationCommandData().Name]; ok {
 			h(s, i)
 		}
+		_, err := s.ApplicationCommandCreate(appID, guildID, &discordgo.ApplicationCommand{
+			Name:        command,
+			Description: description,
+			})
+		if err != nil { fmt.Println(err.Error())}
 	})
 }

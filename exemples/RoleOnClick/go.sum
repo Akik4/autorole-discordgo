@@ -1,5 +1,7 @@
 github.com/akik4/autorole-discordgo v0.0.5 h1:WJZiDGL8iHVxpeyo4YxKtQLWZdIYBGV+/t9R9R9Lc/w=
 github.com/akik4/autorole-discordgo v0.0.5/go.mod h1:50lQlW5aCLDjAEI5gugRGVOG/Vs1oeEZRetkk6EVVDk=
+github.com/akik4/autorole-discordgo v0.0.6 h1:RsfxsmEUD2X/Yvq1ukgT8uZj+OEx/WMj5WsQBZ4tWQA=
+github.com/akik4/autorole-discordgo v0.0.6/go.mod h1:50lQlW5aCLDjAEI5gugRGVOG/Vs1oeEZRetkk6EVVDk=
 github.com/bwmarrin/discordgo v0.27.1 h1:ib9AIc/dom1E/fSIulrBwnez0CToJE113ZGt4HoliGY=
 github.com/bwmarrin/discordgo v0.27.1/go.mod h1:NJZpH+1AfhIcyQsPeuBKsUtYrRnjkyu0kIVMCHkZtRY=
 github.com/gorilla/websocket v1.4.2 h1:+/TMaTYc4QFitKJxsQ7Yye35DkWvkdLcvGKqM+x0Ufc=

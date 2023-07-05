@@ -44,7 +44,7 @@ func main(){
 
 	dg.Open()
 
-	autotrole.CreateCommand(dg, "test", content)
+	autotrole.CreateCommand(dg, "command", "simple cmd", content, "1045028748728217700", "1022982534516195398")
 
 	sc := make(chan os.Signal, 0)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
