@@ -1,8 +1,8 @@
 package main
 
 import (
-	autotrole "akika.fr/auto-role"
 	"fmt"
+	autotrole "github.com/akik4/autorole-discordgo/autorole"
 	"github.com/bwmarrin/discordgo"
 	"os"
 	"os/signal"
@@ -45,7 +45,7 @@ var (
 )
 
 func main(){
-	dg, err := discordgo.New("Bot MTA0NTAyODc0ODcyODIxNzcwMA.GhyHM5.r2oJ49HkGENPkVew-uuE46VtsrZetY6LhUuSFg")
+	dg, err := discordgo.New("Bot " + os.Args[1])
 	if err != nil { fmt.Println(err.Error())}
 
 	err = dg.Open()

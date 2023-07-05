@@ -1,7 +1,6 @@
 package autotrole
 
 import (
-	"fmt"
 	"github.com/bwmarrin/discordgo"
 )
 //Some field can be ignored but at least customID is necessary
