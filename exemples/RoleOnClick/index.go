@@ -10,26 +10,35 @@ import (
 )
 
 var (
+	componentHandlers = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){
+		"test": func(s *discordgo.Session, i *discordgo.InteractionCreate) {
+			autotrole.SetRoleOnClick(s, i , "1085295165054402690")
+		},
+		"sauce": func(s *discordgo.Session, i *discordgo.InteractionCreate){
+			autotrole.SetRoleOnClick(s, i , "1126240547821068489")
+		},
+	}
+
 	btn = []autotrole.ButtonFields{
 		{
 			Buttons: []autotrole.ButtonField{
-				{
-					Label:    "Test",
-					Style:    0,
-					Disabled: false,
-					EmojiID:  "👍",
-					Customid: "test",
-					},
-					{
-					Label:    "Sauce",
-					Style:    0,
-					Disabled: false,
-					EmojiID:  "👀",
-					Customid: "sauce",
-					},
-					},
-					},
-					}
+			{
+				Label:    "Test",
+				Style:    0,
+				Disabled: false,
+				EmojiID:  "👍",
+				Customid: "test",
+			},
+			{
+				Label:    "Sauce",
+				Style:    0,
+				Disabled: false,
+				EmojiID:  "👀",
+				Customid: "sauce",
+			},
+		},
+	},
+}
 					content = []autotrole.MessageFormat{
 						{
 							ResponseType: discordgo.InteractionResponseChannelMessageWithSource,
@@ -41,7 +50,7 @@ var (
 								"test": func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 									autotrole.ResponseSlashCommand(s, i, content)
 								},
-								}
+							}
 )
 
 func main(){
@@ -56,6 +65,10 @@ func main(){
 		switch i.Type {
 		case discordgo.InteractionApplicationCommand:
 			if h, ok := commandsHandlers[i.ApplicationCommandData().Name]; ok {
+				h(s, i)
+			}
+		case discordgo.InteractionMessageComponent:
+			if h, ok := componentHandlers[i.MessageComponentData().CustomID]; ok {
 				h(s, i)
 			}
 		}

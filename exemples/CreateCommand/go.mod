@@ -1,4 +1,4 @@
-module akika.fr/autorole/exemple1
+module github.com/akik4/autorole-discordgo/exemple3
 
 go 1.20
 

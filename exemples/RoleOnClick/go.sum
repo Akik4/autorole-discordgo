@@ -1,9 +1,3 @@
-github.com/akik4/autorole-discordgo v0.0.2 h1:CFqVlGECKy6GC4QOkrNjdeSPKclxr6jMYpp3HK03QrA=
-github.com/akik4/autorole-discordgo v0.0.2/go.mod h1:50lQlW5aCLDjAEI5gugRGVOG/Vs1oeEZRetkk6EVVDk=
-github.com/akik4/autorole-discordgo v0.0.3 h1:uetyCfUidjkbalfgaTTjA1f+6pPTx5Gke/N1BeCMjcM=
-github.com/akik4/autorole-discordgo v0.0.3/go.mod h1:50lQlW5aCLDjAEI5gugRGVOG/Vs1oeEZRetkk6EVVDk=
-github.com/akik4/autorole-discordgo v0.0.4 h1:P4q4bs2dTguGJANIpR7KwSJpqgnm2emsDh10Fd9Ajow=
-github.com/akik4/autorole-discordgo v0.0.4/go.mod h1:50lQlW5aCLDjAEI5gugRGVOG/Vs1oeEZRetkk6EVVDk=
 github.com/akik4/autorole-discordgo v0.0.5 h1:WJZiDGL8iHVxpeyo4YxKtQLWZdIYBGV+/t9R9R9Lc/w=
 github.com/akik4/autorole-discordgo v0.0.5/go.mod h1:50lQlW5aCLDjAEI5gugRGVOG/Vs1oeEZRetkk6EVVDk=
 github.com/bwmarrin/discordgo v0.27.1 h1:ib9AIc/dom1E/fSIulrBwnez0CToJE113ZGt4HoliGY=

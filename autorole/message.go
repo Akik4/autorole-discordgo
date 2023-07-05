@@ -4,6 +4,10 @@ import (
 	"fmt"
 	"github.com/bwmarrin/discordgo"
 )
+
+var (
+	CommandHandlers = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){}
+)
 //Some field can be ignored but at least customID is necessary
 type ButtonField struct {
 	Label string
@@ -88,4 +92,16 @@ func SetRoleOnClick(s *discordgo.Session, i *discordgo.InteractionCreate, roleID
 
 	})
 	if err != nil { fmt.Println(err.Error()); return}
+}
+
+func CreateCommand(s *discordgo.Session, command string, content []MessageFormat){
+	CommandHandlers[command] = func(s *discordgo.Session, i *discordgo.InteractionCreate) {
+		ResponseSlashCommand(s, i, content)
+	}
+
+	s.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
+		if h, ok := CommandHandlers[i.ApplicationCommandData().Name]; ok {
+			h(s, i)
+		}
+	})
 }
