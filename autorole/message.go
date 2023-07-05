@@ -100,8 +100,11 @@ func CreateCommand(s *discordgo.Session, command string, description string,cont
 	}
 
 	s.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
-		if h, ok := CommandHandlers[i.ApplicationCommandData().Name]; ok {
-			h(s, i)
+		switch i.Type {
+		case discordgo.InteractionApplicationCommand:
+			if h, ok := CommandHandlers[i.ApplicationCommandData().Name]; ok {
+				h(s, i)
+			}
 		}
 		_, err := s.ApplicationCommandCreate(appID, guildID, &discordgo.ApplicationCommand{
 			Name:        command,
