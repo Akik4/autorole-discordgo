@@ -74,7 +74,7 @@ func SetRoleOnClick(s *discordgo.Session, i *discordgo.InteractionCreate, roleID
 	err := s.GuildMemberRoleAdd(i.GuildID, i.Member.User.ID, roleID)
 	if err != nil { fmt.Println(err.Error()); return}
 	msg = "You received a new role"
-	if !already {
+	if already {
 		err = s.GuildMemberRoleRemove(i.GuildID, i.Member.User.ID, roleID)
 		if err != nil { fmt.Println(err.Error()); return}
 		msg = "You lost a role"
