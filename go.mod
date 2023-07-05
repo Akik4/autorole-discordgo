@@ -1,4 +1,4 @@
-module akika.fr/auto-role
+module github.com/akik4/autorole-discordgo
 
 go 1.20
 

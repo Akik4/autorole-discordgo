@@ -1,7 +1,7 @@
 package main
 
 import (
-	autotrole "akika.fr/auto-role/autorole"
+	autotrole "akika.fr/auto-role"
 	"fmt"
 	"github.com/bwmarrin/discordgo"
 	"os"
